@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Css links -->
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/html5reset.css">
+    <!-- TBD if removed -->
+    <link rel="stylesheet" href="css/styleTest.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Home Page</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="#main" id="skip">Skip to main content</a>
+        <h1>Video Game Journal</h1>
+        <!-- navigation -->
+        <nav>
+            <ul>
+                <li><a href = "index.html">Home</a></li>
+                <li><a href = "wishlist.html"> Wishlist</a></li>
+                <li><a href = "about.html">About Me</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main id="main">
+      <article >
+        <section id="journalFilter">
+        </section>
+        <section id="allEntries">
+        </section>
+      <article>
+
+        <!-- Journal Entry Form -->
+        <!-- WAVE Errors -->
+        <article id="guidelines">
+            <section tabindex="0" class="container">
+                <!-- 
+
+                Explanation: User inputs are captured/saved to local storage for display on the overview and individual entry pages
+
+                Example: https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/How_to_structure_a_web_form 
+                https://stackoverflow.com/questions/17087636/how-to-save-data-from-a-form-with-html5-local-storage -->    
+
+                <!-- form won't be shown until a button is clicked -->
+                <form id="journalEntryForm" class="hidden">
+                    <fieldset class="form-group">
+                      <h2><legend>Create Your Journal Entry</legend></h2>
+                      <!-- User Names their journal entry -->
+                      <p>
+                        <label for="journalEntryName"> Journal Entry Title</label>
+                        <input type="text" class="form-control" name="size" id="journalEntryName"/>
+                        <small class="form-text text-muted">Required, Enter the name of your journal entry here</small>
+                        <div class="invalid-feedback">
+                            Journal Entry Title is required
+                         </div>
+
+                      </p>
+                      <!-- Video Game Information (Stuff that can be fetched to be populated) -->
+                      <p>
+                        <label for="videoGameTitleForm">Video Game Title</label>
+                        <input type="text" class="form-control" name="size" id="videoGameTitleForm" placeholder="Enter title"/>
+                        <small class="form-text text-muted">Required</small>
+                        <div class="invalid-feedback">
+                            Game title is required
+                         </div>
+                      </p>
+                      <p>
+                        <label for="dateEntry">Date</label>
+                        <input type="text" class="form-control" name="dateEntry" id="dateEntryId"/>
+                        <small class="form-text text-muted" >Required</small>
+                        <div class="invalid-feedback">
+                          Date is required
+                        </div>
+                      </p>
+                      <!-- Actual Journal Entry -->
+                        <!-- Overall Thoughts -->
+                        <fieldset class="form-group">
+                            <h3> Overall Thoughts</h3>
+                            <p class="row">
+                                <!-- Image Address-->
+                                <label for="thoughtImg">Image Address/URL </label>
+                                <input type="text" class="form-control" name="thoughtImg" id="thoughtImgId"/>
+                                <small class="text-muted">Optional, Img Address of picture representing your overall thoughts of your game</small>
+                                <div class="invalid-feedback">
+                                  Invalid Image Address
+                                </div>
+                                <!-- Image Caption Input -->
+                                <label for="thoughtImgCaption">Image Caption</label>
+                                <input type="text" class="form-control" name="thoughtImgCaption" id="thoughtImgCaptionId"/>
+                                <small class="text-muted">Optional, Caption of provided image</small>
+
+                            </p>
+                            <p>
+                                <!-- Overall Thoughts paragraph -->
+                                <label for="overallThoughtsParagraph">Overarching Thoughts</label>
+                                <textarea class="form-control" name="overallThoughtsParagraph" id="overallThoughtsParagraphId"></textarea>
+                                <small class="text-muted">Required</small>
+                                <div class="invalid-feedback">
+                                  Your overall thoughts is required.
+                                </div>
+                            </p>
+                        </fieldset>
+    
+                        <!-- Key Moment(s) -->
+                        <fieldset class="form-group">
+                            <h3> Key Moments</h3>
+                            <p> Let's talk about some of your favorite moments of the video game!</p>
+                            
+                            <!-- key moments sections introductory text -->
+                            <p  class="row">
+                                <!-- Key Moment(s) Image & Caption -->
+                                <!-- Image Address-->
+                                <label for="keyImg">Image Address/URL </label>
+                                <input type="text" class="form-control" name="keyImg" id="keyImgId"/>
+                                <small class="text-muted">Optional, Image Address/URL of picture representing a key moment of the video game</small>
+                                <div class="invalid-feedback">
+                                  Invalid Image Address
+                                </div>
+                                <!-- Image Caption Input -->
+                                <label for="keyImgCaption">Image Caption</label>
+                                <input type="text" name="keyImgCaption" id="keyImgCaptionId" placeholder="Caption"/>
+                                <small class="text-muted">Optional, Caption of provided image</small>
+
+                            </p>
+                            <p>
+                                <!-- Key Moment(s) paragraph -->
+                                <label for="keyParagraph">Key Moment Entry</label>
+                                <textarea class="form-control" name="keyParagraph" id="keyParagraphId"></textarea>
+                            </p>
+                        </fieldset>
+    
+                        <!-- Conclusion -->
+                        <fieldset class="form-group">
+                            <h3> Conclusion</h2>
+                            <p>What are your final thoughts on this game?</p>
+
+                            <p class="row">
+                                <!-- Conclusion Image & Caption -->
+                                <label for="conclusionImg">Image Address/URL</label>
+                                <input type="text" class="form-control" name="conclusionImg" id="conclusionImgId"/>
+                                <small class="text-muted">Optional, Img Address of picture representing your concluding thoughts</small>
+                                <div class="invalid-feedback">
+                                  Invalid Image Address
+                                </div>
+                                <!-- Image Caption Input -->
+                                <label for="conclusionImageCaption">Image Caption</label>
+                                <input type="text" name="conclusionImgCaption" id="conclusionImgCaptionId"/>
+                                <small class="text-muted">Optional, Caption of provided image</small>
+                            </p>
+                            <p>
+                                <!-- Conclusion paragraph -->
+                                <label for="conclusionParagraph">Concluding Thoughts</label>
+                                <textarea class="form-control" name="conclusionParagraph" id="conclusionParagraphId"></textarea>
+                                <small class="text-muted">Required</small>
+                                <div class="invalid-feedback">
+                                  Concluding Thoughts are required.
+                                </div>
+                            </p>
+                        </fieldset>
+                        <!-- Select to choose tags associated with this game -->
+                        <div class="form-group">
+                            <label for="entryTags">Tags</label>
+                            <select class="form-control" id="entryTags">
+                              <option>Played</option>
+                              <option>Did Not Finish</option>
+                              <option>Playing</option>
+                              <option>Watched</option>
+                              <option>Not Played</option>
+                            </select>
+                          </div>
+                    </fieldset>
+                    <!-- When clicked, get form information and save it to local storage -->
+                    <input type="submit" id="formSubmit" value="Submit">
+                  </form>              
+            </section>
+        </article>
+        <article id="guidelines">
+            <section id="entryConfirmScreen" class="hidden">
+            </section>
+        </article>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="container">
+          <p>
+            ૮꒰ ˶• ༝ •˶꒱ა 
+            <br>
+            Created by <a href="https://www.linkedin.com/in/lilymadojemu/">Lily Madojemu</a> 
+            <br>
+            ♡ <span id="year"></span> ♡
+          </p>
+    </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="js/home.js" defer></script>
+</html>

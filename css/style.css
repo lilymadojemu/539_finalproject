@@ -42,3 +42,11 @@ footer {
     text-align: center;
 }
 
+.entryForm {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+form {
+    grid-column: 2;
+}

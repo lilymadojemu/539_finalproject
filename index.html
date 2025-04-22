@@ -16,13 +16,12 @@
     <!-- Header -->
     <header>
         <a href="#main" id="skip">Skip to main content</a>
-        <h1>539 Video Game Journal</h1>
+        <h1>Welcome to Your Video Game Journal 📖</h1>
         <!-- navigation -->
         <nav>
             <ul>
                 <li><a href = "index.html">Home</a></li>
                 <li><a href = "entriesOverview.html"> Journal Entries</a></li>
-                <li><a href = "about.html">About</a></li>
             </ul>
         </nav>
     </header>
@@ -31,36 +30,28 @@
         <!-- Journal Entry Form -->
         <!-- WAVE Errors -->
         <article id="guidelines">
-            <section tabindex="0" class="container">
-                <!-- 
-
-                Explanation: User inputs are captured/saved to local storage for display on the overview and individual entry pages
-
-                Example: https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/How_to_structure_a_web_form 
-                https://stackoverflow.com/questions/17087636/how-to-save-data-from-a-form-with-html5-local-storage -->    
-
-                <!-- form won't be shown until a button is clicked -->
-                <form id="journalEntryForm">
-                    <fieldset class="form-group">
+          <section tabindex="0" class="entryForm">
+              <!-- User inputs are captured/saved to local storage for display on the overview and individual entry pages -->    
+              <form id="journalEntryForm" class="container">
+                    <fieldset class="form-group w-75">
                       <h2><legend>Create Your Journal Entry</legend></h2>
                       <!-- User Names their journal entry -->
-                      <p>
+                      <p class="form-group">
                         <label for="journalEntryName"> Journal Entry Title</label>
                         <input type="text" class="form-control" name="size" id="journalEntryName"/>
                         <small class="form-text text-muted">Required, Enter the name of your journal entry here</small>
                         <div class="invalid-feedback">
                             Journal Entry Title is required
-                         </div>
-
+                        </div>
                       </p>
                       <!-- Video Game Information (Stuff that can be fetched to be populated) -->
-                      <p>
+                      <p class="form-group">
                         <label for="videoGameTitleForm">Video Game Title</label>
                         <input type="text" class="form-control" name="size" id="videoGameTitleForm" placeholder="Enter title"/>
                         <small class="form-text text-muted">Required</small>
                         <div class="invalid-feedback">
                             Game title is required
-                         </div>
+                        </div>
                       </p>
                       <p>
                         <label for="dateEntry">Date</label>
@@ -169,14 +160,14 @@
                     </fieldset>
                     <!-- When clicked, get form information and save it to local storage -->
                     <input type="submit" id="formSubmit" value="Submit">
-                  </form>              
-            </section>
-        </article>
-        <article id="guidelines">
-            <section id="entryConfirmScreen" class="hidden">
-            </section>
-        </article>
-
+                  </form>  
+                </div>            
+          </section>
+      </article>
+      <article id="guidelines">
+          <section id="entryConfirmScreen">
+          </section>
+      </article>
     </main>
 
     <!-- Footer -->

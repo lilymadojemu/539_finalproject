@@ -41,6 +41,47 @@
 footer {
     text-align: center;
 }
+.createEntryBtn {
+    text-align: center;
+}
+
+#journalFilter {
+    text-align: center;
+}
+#allEntries {
+    display: grid;
+}
+
+img {
+    height: 50%;
+    width: 50%;
+}
+figure > img, figcaption {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.introduction {
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.gameImg {
+    display: block;
+}
+
+.entryImg {
+    height: 60%;
+    width: 30%;
+}
+
+
+form {
+    display: inline-block; 
+}
 
 .entryForm {
     display: grid;

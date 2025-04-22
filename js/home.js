@@ -291,7 +291,7 @@ const renderEntries = (entries) => {
          <div class="d-flex">
           <h3>${entry.videoGameName}</h3>
           <h4>${entry.entryTitle}</h4>
-          <small class="px-1 text-muted align-self-center">${entry.date}</small>
+          <small class="px-1 text-white align-self-center">${entry.date}</small>
          </div>
        <p>${entry.entryTitle}</p>
        <p> ${entry.tags} </p>

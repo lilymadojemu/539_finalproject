@@ -99,9 +99,9 @@ const entryConfirmed = () => {
     ` 
         <h2>Journal Entry Complete!</h2> 
 
-        <a href='entry.html?id=${lastEntry.id}'><button>View Your Current Journal Entry</button></a> 
+        <a href="entry.html?id=${lastEntry.id}"><button>View Your Current Journal Entry</button></a> 
 
-        <button onClick=location.reload()>View All Journal Entries</button>
+        <a href="entriesOverview.html"><button>View All Journal Entries</button></a>
 
         <button class="anotherEntryBtn">Create another journal entry</button>
     `

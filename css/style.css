@@ -153,10 +153,10 @@ html {
   margin-bottom: clamp(3rem, 5vw, 5.6rem);
 }
 
-.page-footer::before, #guidelines::before {
+/* .page-footer::before, #guidelines::before {
   background-color: var(--before, var(--c9));
   background-image: var(--divider-10);
-}
+} */
 
 #contribute, #about {
   background: var(--c9);
@@ -279,11 +279,6 @@ header h1 {
 header h2 {
   font-size: 1.77rem;
   margin-bottom: 1rem;
-}
-header .link-github {
-  margin-top: 1rem;
-  background: var(--c9);
-  color: var(--c1);
 }
 
 nav {
@@ -456,9 +451,6 @@ section.container + *,
   height: 100%;
 }
 
-.page-footer {
-  --before: var(--c8);
-}
 .page-footer ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -574,5 +566,8 @@ button:hover, formSubmit:hover {
     color: #0d6efd;
     text-decoration: underline;
 }
+nav a:active{
+    text-decoration: underline;
+}
 
-
+/* focus states */

@@ -44,7 +44,7 @@ const urlParams = new URLSearchParams(window.location.search);
 // This is the unique ID for the journal entry
 const entryId = urlParams.get("id");
 // Get the list of entries from local storage
-let entryList = localStorage.getItem('entry.list') ? JSON.parse(localStorage.getItem('entry.list')) : defaultEntries;
+let entryList = localStorage.getItem("entry.list") ? JSON.parse(localStorage.getItem("entry.list")) : defaultEntries;
 // Save default entries to localStorage if entry.list doesn't already exist
 if (!localStorage.getItem("entry.list")) {
     localStorage.setItem("entry.list", JSON.stringify(defaultEntries));
@@ -68,7 +68,7 @@ document.querySelector("#navLastEntry").href = `entry.html?id=${lastEntry.id}`
 */
 const createSection = ({ title, img, caption, paragraph }) => {
   return `
-    <section>
+    <section tabindex="0">
       ${img ? `
         <figure>
           <img src="${img}" alt="">

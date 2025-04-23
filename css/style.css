@@ -567,15 +567,12 @@ form {
     grid-column: 2;
 }
 
-button {
+button, formSubmit {
     background: var(--c1)
 }
-button:hover {
+button:hover, formSubmit:hover {
     color: #0d6efd;
     text-decoration: underline;
 }
 
-.text-muted {
-    color:white !important;
-}
 

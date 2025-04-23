@@ -56,6 +56,12 @@ const matchingEntry = entryList.find(entry => entry.id === Number(entryId));
 const journalEntry = document.querySelector("#entryContainer")
 const moreEntries = document.querySelector("#otherEntries")
 
+// Gets the information of the most recent entry the user submitted
+const lastEntry = entryList[entryList.length - 1] ;
+
+// sets the href in the nav to go to the most recent entry the user submitted
+document.querySelector("#navLastEntry").href = `entry.html?id=${lastEntry.id}`
+
 /**
  * Creates a standardized HTML section block with optional image, caption, and paragraph content.
  * From chatgpt: https://chatgpt.com/share/6807bbd0-473c-8009-a182-9082acda3b7a

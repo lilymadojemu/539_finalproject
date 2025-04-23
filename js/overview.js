@@ -2,7 +2,7 @@ const defaultEntries = [
   {
     id: Date.now(),
     videoGameName: "Celeste",
-    entryTitle: "My wrist hurts but I'm having fun",
+    entryTitle: "My hand hurts but I'm having fun",
     date: "April 19th, 2025",
     overallThoughtsImg:"https://assets.nintendo.com/image/upload/ar_16:9,c_lpad,w_1240/b_white/f_auto/q_auto/ncom/software/switch/70010000006442/691ba3e0801180a9864cc8a7694b6f98097f9d9799bc7e3dc6db92f086759252",
     overallThoughtsImgCaption:"Strawberry with wings 🪽 ",
@@ -47,10 +47,15 @@ const entryFilter = document.querySelector("#journalFilter")
 // otherwise it uses defaultEntries (should be established from other js file...).
 let entryList = localStorage.getItem('entry.list') ? JSON.parse(localStorage.getItem('entry.list')) : defaultEntries;
 
-// Preparing for filtering entries based on tag(s)
+// Preparing for filtering entries
 let filterStatus = false;
 let filteredEntries = [];
 
+// Gets the information of the most recent entry the user submitted
+const lastEntry = entryList[entryList.length - 1];
+
+// sets the href in the nav to go to the most recent entry the user submitted
+document.querySelector("#navLastEntry").href = `entry.html?id=${lastEntry.id}`
 
 // Render preview of journal entries based on information from entryList
 const renderEntries = (entries) => {
@@ -83,3 +88,35 @@ const renderEntries = (entries) => {
 
 renderEntries();
 
+// Filtering based on tags
+const tagList = ["Played", "Did Not Finish", "Playing", "Watched", "Not Played"]
+
+const renderTagFilters = () => {
+  entryFilter.innerHTML = "";
+  tagList.forEach(tag => {
+    entryFilter.innerHTML += 
+    `<button class="tag-btn" value="${tag}">${tag}</button>`;
+  });
+  entryFilter.innerHTML += `<button class="showAll">Show All Entries</button>`;
+
+  // Add event listeners after buttons are added to the DOM
+  document.querySelectorAll(".tag-btn").forEach(button => {
+    button.addEventListener("click", e => {
+      filterStatus = true;
+      const selectedTags = e.target.value;
+      filteredEntries = entryList.filter(
+        (entry) => entry.tags && entry.tags === selectedTags
+      );
+      console.log("Checking entry:", filteredEntries);
+      renderEntries(filteredEntries);
+    });
+  document.querySelector(".showAll").addEventListener("click", e => {
+    filterStatus = false;
+    filteredEntries = [];
+    renderEntries();
+  });
+
+  });
+}
+
+renderTagFilters();

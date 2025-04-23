@@ -2,7 +2,7 @@ const defaultEntries = [
   {
     id: Date.now(),
     videoGameName: "Celeste",
-    entryTitle: "My wrist hurts but I'm having fun",
+    entryTitle: "My hand hurts but I'm having fun",
     date: "April 19th, 2025",
     overallThoughtsImg:"https://assets.nintendo.com/image/upload/ar_16:9,c_lpad,w_1240/b_white/f_auto/q_auto/ncom/software/switch/70010000006442/691ba3e0801180a9864cc8a7694b6f98097f9d9799bc7e3dc6db92f086759252",
     overallThoughtsImgCaption:"Strawberry with wings 🪽 ",
@@ -76,7 +76,11 @@ const formSubmitBtn = document.querySelector("#formSubmit")
 // Confirm Screen Area
 const confirmScreen = document.querySelector("#entryConfirmScreen")
 
+// Gets the information of the most recent entry the user submitted
+const lastEntry = entryList[entryList.length - 1];
 
+// sets the href in the nav to go to the most recent entry the user submitted
+document.querySelector("#navLastEntry").href = `entry.html?id=${lastEntry.id}`
 
 /**
  * show the screen confirming that a journal entry has been saved
@@ -86,10 +90,6 @@ const entryConfirmed = () => {
     journalEntryForm.classList.add("hidden");
     // Reveals confirm screen
     confirmScreen.classList.remove("hidden");
-
-    // Gets the information of the entry the user just submitted
-    const entryList = JSON.parse(localStorage.getItem('entry.list'));
-    const lastEntry = entryList[entryList.length - 1];
 
     // have 3 buttons: 
     // 1. Go to entry page of the entry just created, 
@@ -266,72 +266,3 @@ formSubmitBtn.addEventListener('click', function(e) {
     captureEntry(e);
   });
 
-
-// Render and Filter ALl Journal Entires
-// Grabbing DOM elements 
-const entriesContainer = document.querySelector('#allEntries');
-const entryFilter = document.querySelector("#journalFilter")
-
-// Preparing for filtering entries based on tag(s)
-let filterStatus = false;
-let filteredEntries = [];
-
-// Render preview of journal entries based on information from entryList
-const renderEntries = (entries) => {
-  if (!filterStatus) {
-    entries = entryList
-  } else {
-    entries = filteredEntries
-  }
-    entriesContainer.innerHTML="";
-    // Create all entry previews from entryList
-    entries.forEach((entry) => {
-      entriesContainer.innerHTML += 
-        `<div class="position-relative col-12 border border-secondary rounded my-3 p-3 bg-white">
-         <div class="d-flex">
-          <h3>${entry.videoGameName}</h3>
-          <h4>${entry.entryTitle}</h4>
-          <small class="px-1 text-white align-self-center">${entry.date}</small>
-         </div>
-       <p>${entry.entryTitle}</p>
-       <p> ${entry.tags} </p>
-      <a href='entry.html?id=${entry.id}'><button>View Journal Entry</button></a> 
-       </div>`;
-      });
-}
-
-renderEntries();
-
-
-// Filtering based on tags
-const tagList = ["Played", "Did Not Finish", "Playing", "Watched", "Not Played"]
-
-const renderTagFilters = () => {
-  entryFilter.innerHTML = "";
-  tagList.forEach(tag => {
-    entryFilter.innerHTML += 
-    `<button class="tag-btn" value="${tag}">${tag}</button>`;
-  });
-  entryFilter.innerHTML += `<button class="showAll">Show All Entries</button>`;
-
-  // Add event listeners after buttons are added to the DOM
-  document.querySelectorAll(".tag-btn").forEach(button => {
-    button.addEventListener("click", e => {
-      filterStatus = true;
-      const selectedTags = e.target.value;
-      filteredEntries = entryList.filter(
-        (entry) => entry.tags && entry.tags === selectedTags
-      );
-      console.log("Checking entry:", filteredEntries);
-      renderEntries(filteredEntries);
-    });
-  document.querySelector(".showAll").addEventListener("click", e => {
-    filterStatus = false;
-    filteredEntries = [];
-    renderEntries();
-  });
-
-  });
-}
-
-renderTagFilters();

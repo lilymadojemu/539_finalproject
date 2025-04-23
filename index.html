@@ -27,22 +27,17 @@
     
     <main id="main">
         <!-- Journal Entry Form -->
-        <!-- WAVE Errors -->
-         <!-- UPDATE FORM WITH LABELS FOR WAVE -->
-          <!-- Axe Error 
-           Ensure every form element has a label 
-           Increase color contrast for muted text-->
         <article id="guidelines">
           <section tabindex="0" class="entryForm">
               <!-- User inputs are captured/saved to local storage for display on the overview and individual entry pages -->    
               <form id="journalEntryForm" class="container">
-                    <h2><legend>Create Your Journal Entry</legend></h2>
-                    <fieldset class="form-group w-75">
+                    <fieldset class="form-group w-100">
+                      <h2><legend>Create Your Journal Entry</legend></h2>
                       <!-- User Names their journal entry -->
                       <p class="form-group">
                         <label for="journalEntryName">Journal Entry Title</label>
                         <input type="text" class="form-control" id="journalEntryName"/>
-                        <small class="form-text text-white">Required, Enter the name of your journal entry here</small>
+                        <small class="form-text text-white">Required</small>
                         <div class="invalid-feedback">
                             Journal Entry Title is required
                         </div>
@@ -50,7 +45,7 @@
                       <p class="form-group">
                         <label for="videoGameTitleForm">Video Game Title</label>
                         <input type="text" class="form-control" id="videoGameTitleForm"/>
-                        <small class="form-text text-white"> Required</small>
+                        <small class="form-text text-white">Required</small>
                         <div class="invalid-feedback">
                             Game title is required
                         </div>
@@ -58,7 +53,7 @@
                       <p>
                         <label for="dateEntryId">Date</label>
                         <input type="text" class="form-control" name="dateEntry" id="dateEntryId"/>
-                        <small class="form-text text-white" >Required</small>
+                        <small class="form-text text-white">Required</small>
                         <div class="invalid-feedback">
                           Date is required
                         </div>
@@ -68,20 +63,19 @@
                         <!-- Overall Thoughts -->
                       <fieldset class="form-group">
                             <h3> <legend>Overall Thoughts</legend></h3>
-                            <p class="row">
+                            <p>
                                 <!-- Image Address-->
                                 <label for="thoughtImgId">Image Address/URL</label>
                                 <input type="text" class="form-control" name="thoughtImg" id="thoughtImgId"/>
-                                <small class="text-white">Optional, Img Address of picture representing your overall thoughts of your game</small>
+                                <small class="text-white">Optional</small>
                                 <div class="invalid-feedback">
                                   Invalid Image Address
                                 </div>
                                 <!-- Image Caption Input -->
                                 <label for="thoughtImgCaptionId">Image Caption</label>
                                 <input type="text" class="form-control" name="thoughtImgCaption" id="thoughtImgCaptionId"/>
-                                <small class="text-white">Optional, Caption of provided image</small>
+                                <small class="text-white">Optional</small>
                             </p>
-                            <br/>
                             <p>
                                 <!-- Overall Thoughts paragraph -->
                                 <label for="overallThoughtsParagraphId">Overarching Thoughts</label>
@@ -92,25 +86,25 @@
                                 </div>
                             </p>
                         </fieldset>
-    
+                        <br/>
                         <!-- Key Moment(s) -->
                         <fieldset class="form-group">
                             <h3><legend>Key Moments</legend></h3>
                             <p> Let's talk about some of your favorite moments of the video game!</p>
                             
                             <!-- key moments sections introductory text -->
-                            <p  class="row">
+                            <p>
                                 <!-- Key Moment(s) Image & Caption -->
                                 <!-- Image Address-->
                                 <label for="keyImgId">Image Address/URL </label>
                                 <input type="text" class="form-control" name="keyImg" id="keyImgId"/>
-                                <small class="text-white">Optional, Image Address/URL of picture representing a key moment of the video game</small>
+                                <small class="text-white">Optional</small>
                                 <div class="invalid-feedback">
                                   Invalid Image Address
                                 </div>
                                 <!-- Image Caption Input -->
                                 <label for="keyImgCaptionId">Image Caption</label>
-                                <input type="text" name="keyImgCaption" id="keyImgCaptionId"/>
+                                <input type="text" class="form-control" name="keyImgCaption" id="keyImgCaptionId"/>
                                 <small class="text-white">Optional</small>
 
                             </p>
@@ -118,23 +112,25 @@
                                 <!-- Key Moment(s) paragraph -->
                                 <label for="keyParagraphId">Key Moment Entry</label>
                                 <textarea class="form-control" name="keyParagraph" id="keyParagraphId"></textarea>
+                                <small class="text-white">Required</small>
                             </p>
                         </fieldset>
+                        <br/>
                         <!-- Conclusion -->
                         <fieldset class="form-group">
                             <h3><legend>Conclusion</legend></h2>
                             <p>What are your final thoughts on this game?</p>
-                            <p class="row">
+                            <p>
                                 <!-- Conclusion Image & Caption -->
                                 <label for="conclusionImgId">Image Address/URL</label>
                                 <input type="text" class="form-control" name="conclusionImg" id="conclusionImgId"/>
-                                <small class="text-white">Optional, Img Address of picture representing your concluding thoughts</small>
+                                <small class="text-white">Optional</small>
                                 <div class="invalid-feedback">
                                   Invalid Image Address
                                 </div>
                                 <!-- Image Caption Input -->
                                 <label for="conclusionImgCaptionId">Image Caption</label>
-                                <input type="text" name="conclusionImgCaption" id="conclusionImgCaptionId"/>
+                                <input class="form-control" type="text" name="conclusionImgCaption" id="conclusionImgCaptionId"/>
                                 <small class="text-white">Optional</small>
                             </p>
                             <p>
@@ -147,7 +143,7 @@
                                 </div>
                             </p>
                         </fieldset>
-
+                        <br/>
                         <!-- Select to choose tags associated with this game -->
                         <div class="form-group">
                           <h3><legend>Tags</legend></h3>
@@ -160,10 +156,12 @@
                               <option>Watched</option>
                               <option>Not Played</option>
                             </select>
+                            <small class="text-white">Optional</small>
                           </div>
                     </fieldset>
+                    <br/>
                     <!-- When clicked, get form information and save it to local storage -->
-                    <input type="submit" id="formSubmit" value="Submit">
+                    <input class="btn-lg" type="submit" id="formSubmit" value="Submit">
                   </form>  
                 </div>            
           </section>

@@ -62,7 +62,12 @@ const moreEntries = document.querySelector("#otherEntries")
 const lastEntry = entryList[entryList.length - 1] ;
 
 // sets the href in the nav to go to the most recent entry the user submitted
-document.querySelector("#navLastEntry").href = `entry.html?id=${lastEntry.id}`
+const navLastEntry = document.querySelector("#navLastEntry");
+navLastEntry.href = `entry.html?id=${lastEntry.id}`
+// Indicates when currently viewing the most recent/last entry page
+if (entryId=== String(lastEntry.id)) {
+  navLastEntry.classList.add("current");
+}
 
 /**
  * Creates a standardized HTML section block with optional image, caption, and paragraph content.

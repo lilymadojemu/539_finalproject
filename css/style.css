@@ -547,7 +547,7 @@ button, #formSubmit {
     color: var(--c9);
     font-family: "Londrina Solid", cursive;
 }
-button:hover, #formSubmit:hover {
+button:hover, #formSubmit:hover, a:hover {
     color: #0a58ca;
     text-decoration: underline;
 }
@@ -555,7 +555,14 @@ nav a:active{
     text-decoration: underline;
 }
 nav a.current {
-  border-bottom: 2px solid #FFCB05;
   font-weight: bold;
-  color: white;
+  color: #000000;
+  text-decoration: underline;
+}
+
+.hidden {
+  display: none;
+}
+.show {
+  opacity: 100;
 }

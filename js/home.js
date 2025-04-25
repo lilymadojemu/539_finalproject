@@ -112,7 +112,6 @@ const entryConfirmed = () => {
     })
 }
 
-
 /**
  * Checks url for Image address to ensure image url's are valid
  * From ChatGPT

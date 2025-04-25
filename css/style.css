@@ -558,6 +558,7 @@ nav a.current {
 }
 nav a:focus {
   color:red;
+  text-decoration: overline;
 }
 
 .hidden {

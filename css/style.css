@@ -128,14 +128,7 @@ html {
 .link-codepen span, .link-guidelines span, nav a span, header .link-github span {
   display: inherit;
 }
-.page-footer ul a svg, #styles .container > a svg, .profile .container > a svg, .link-downloadcss svg,
-.link-downloadhtml svg,
-.link-codepen svg, .link-guidelines svg, nav a svg, header .link-github svg {
-  display: inline-block;
-  height: 1em;
-  width: auto;
-  margin-right: 1ch;
-}
+
 .page-footer ul a path, #styles .container > a path, .profile .container > a path, .link-downloadcss path,
 .link-downloadhtml path,
 .link-codepen path, .link-guidelines path, nav a path, header .link-github path {
@@ -550,14 +543,19 @@ form {
 }
 
 button, #formSubmit {
-    background: var(--c1)
+    background: var(--c1);
+    color: var(--c9);
+    font-family: "Londrina Solid", cursive;
 }
-button:hover, formSubmit:hover {
-    color: #0d6efd;
+button:hover, #formSubmit:hover {
+    color: #0a58ca;
     text-decoration: underline;
 }
 nav a:active{
     text-decoration: underline;
 }
-
-/* focus states */
+nav a.current {
+  border-bottom: 2px solid #FFCB05;
+  font-weight: bold;
+  color: white;
+}

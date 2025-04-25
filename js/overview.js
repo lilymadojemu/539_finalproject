@@ -38,7 +38,8 @@ const defaultEntries = [
     tags: "Played"
   }];
   
-
+// Add year to the footer
+document.querySelector("#year").innerHTML = new Date().getFullYear();
 // Grabbing DOM elements 
 const entriesContainer = document.querySelector('#allEntries');
 const entryFilter = document.querySelector("#journalFilter")

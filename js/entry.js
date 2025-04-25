@@ -38,6 +38,8 @@ const defaultEntries = [
     conclusionParagraph:"Persona 3 Reload is a beautiful, melancholic meditation on time, death, and the bonds we forge in between. It doesn’t offer easy answers, but it gives weight to every choice, every relationship, every quiet night under a starless sky. In the end, it’s not just a game about fighting shadows—it’s about finding light in fleeting moments and facing the inevitable with courage. It stayed with me like a memory I lived through, not just played.",
     tags: "Played"
   }];
+// Add year to the footer
+document.querySelector("#year").innerHTML = new Date().getFullYear();
 
 // Grabbing the unique journal entry id from the search URL
 const urlParams = new URLSearchParams(window.location.search);

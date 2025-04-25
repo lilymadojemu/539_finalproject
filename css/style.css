@@ -153,10 +153,6 @@ html {
   margin-bottom: clamp(3rem, 5vw, 5.6rem);
 }
 
-/* .page-footer::before, #guidelines::before {
-  background-color: var(--before, var(--c9));
-  background-image: var(--divider-10);
-} */
 
 #contribute, #about {
   background: var(--c9);
@@ -478,12 +474,7 @@ section.container + *,
     opacity: 100;
 }
 
-.hidden {
-    display: none;
-}
-.show {
-    opacity: 100;
-}
+
 /* Form Confirm Screen */
 #entryConfirmScreen {
     display: grid;
@@ -541,10 +532,9 @@ figure > img, figcaption {
 }
 
 .entryImg {
-    height: 60%;
-    width: 30%;
+  max-width: 100%;
+  height: auto;
 }
-
 
 form {
     display: inline-block; 
@@ -559,7 +549,7 @@ form {
     grid-column: 2;
 }
 
-button, formSubmit {
+button, #formSubmit {
     background: var(--c1)
 }
 button:hover, formSubmit:hover {

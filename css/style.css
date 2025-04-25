@@ -452,6 +452,7 @@ section.container + *,
   list-style: none;
 }
 
+
 /* My CSS */
 
 /* Skip to main content Functionality*/
@@ -479,15 +480,12 @@ section.container + *,
     grid-column: 2;
 }
 
-/* Will Further update to have same stylings as nav buttons */
-
 #entryConfirmScreen button {
     display: block;
     margin: 0 auto;
     margin-top: 2%;
     background-color: rgb(254, 212, 213);
 }
-
 /* footer design */
 footer {
     text-align: center;
@@ -495,7 +493,6 @@ footer {
 .createEntryBtn {
     text-align: center;
 }
-
 #journalFilter {
     text-align: center;
 }

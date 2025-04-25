@@ -556,6 +556,9 @@ nav a.current {
   color: #000000;
   text-decoration: underline;
 }
+nav a:focus {
+  color:red;
+}
 
 .hidden {
   display: none;
